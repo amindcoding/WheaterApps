@@ -1,0 +1,21 @@
+# .github/workflows/deploy.yml
+name: Deploy Weather App
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - run: npm install
+      - run: npm run build
+
+      - name: Deploy ke Vercel / Netlify / Custom
+        run: echo "Deploy step (adjust as needed)"
