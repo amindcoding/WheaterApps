@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "author": {
-    "name": "@amindcoding", 
+    "name": "@amindcoding",
     "url": "https://github.com/amindcoding/WheaterApps"
   },
   "scripts": {
@@ -12,6 +12,8 @@
     "build": "vite build && tsc",
     "serve": "vite preview",
     "test": "vitest run",
+    "test:unit": "vitest --root src/",
+    "msw-init": "npx msw init ./public --save",
     "format": "biome format",
     "lint": "biome lint",
     "check": "biome check"
@@ -34,16 +36,23 @@
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@testing-library/dom": "^10.4.0",
-    "@testing-library/react": "^16.2.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/react-hooks": "^5.0.0-beta.12",
+    "@testing-library/user-event": "^14.0.0-beta.14",
+    "@types/jest": "^29.5.14",
     "@types/node": "^22.15.0",
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
     "@vitejs/plugin-react": "^4.3.4",
-    "jsdom": "^26.0.0",
+    "msw": "^2.7.5",
     "tw-animate-css": "^1.2.8",
     "typescript": "^5.7.2",
     "vite": "^6.1.0",
     "vitest": "^3.0.5",
     "web-vitals": "^4.2.4"
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }
